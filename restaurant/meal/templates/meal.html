@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block webTitle %}
+    Get Your Item here
+{% endblock webTitle %}
+
+
+{% block content %}
+    <div class="meals row justify-content-center gap-5 mt-5">
+        {% for mel in categories %}
+            <div class="card col-12" style="width: 18rem;">
+                <img src="{{mel.strCategoryThumb}}" class="card-img-top" alt="food">
+                <div class="card-body">
+                <h5 class="card-title">{{mel.strCategory}}</h5>
+                <p class="card-text"> {{mel.strCategoryDescription | truncatewords:10}} </p>
+                <a href="#" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+           <!-- <h1>{{mel.strCategory}}</h1>  -->
+        {% endfor %}
+    </div>
+{% endblock content %}
